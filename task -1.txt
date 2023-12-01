@@ -1,0 +1,141 @@
+
+
+
+import java.util.Scanner;
+
+public class OnlineReservationSystem {
+
+    private static boolean[] seats = new boolean[10]; // initialize an array of 10 seats, all empty
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+
+            // display menu
+            System.out.println("\nPlease select an option:");
+            System.out.println("1. View Seat Map");
+            System.out.println("2. Reserve Seat");
+            System.out.println("3. Cancel Reservation");
+            System.out.println("4. Exit");
+
+            // get user input
+            int option = scanner.nextInt();
+
+            switch (option) {
+
+                case 1:
+                    viewSeatMap();
+                    break;
+
+                case 2:
+                    reserveSeat();
+                    break;
+
+                case 3:
+                    cancelReservation();
+                    break;
+
+                case 4:
+                    System.exit(0); // exit the program
+
+                default:
+                    System.out.println("Invalid option!");
+            }
+        }
+    }
+
+    private static void viewSeatMap() {
+        System.out.println("\nCurrent Seat Map:");
+        for (int i = 0; i < seats.length; i++) {
+            if (seats[i]) {
+                System.out.print("X "); // print an "X" if the seat is reserved
+            } else {
+                System.out.print((i + 1) + " "); // print the seat number if it's empty
+            }
+        }
+        System.out.println();
+    }
+
+    private static void reserveSeat() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\nEnter seat number (1-10): ");
+        int seatNumber = scanner.nextInt();
+        if (seatNumber < 1 || seatNumber > 10) {
+            System.out.println("Invalid seat number!");
+        } else if (seats[seatNumber - 1]) {
+            System.out.println("Seat already reserved!");
+        } else {
+            seats[seatNumber - 1] = true; // reserve the seat
+            System.out.println("Seat reserved!");
+        }
+    }
+
+    private static void cancelReservation() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\nEnter seat number (1-10): ");
+        int seatNumber = scanner.nextInt();
+        if (seatNumber < 1 || seatNumber > 10) {
+            System.out.println("Invalid seat number!");
+        } else if (!seats[seatNumber - 1]) {
+            System.out.println("Seat not reserved!");
+        } else {
+            seats[seatNumber - 1] = false; // unreserve the seat
+            System.out.println("Reservation canceled!");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I successfully finished Task 1, which involved creating an Online Reservation System in Java using Eclipse IDE. Let me break down the key steps:
+
+Array Initialization:
+The code starts by creating an array named "seats" with boolean values, representing the availability of each seat. 'true' means reserved, and 'false' means available. The array has a length of 10, correlating to the number of seats.
+
+Main Method Logic:
+The main method orchestrates a user-friendly menu using a loop. Users can choose from options like viewing the seat map, reserving a seat, canceling a reservation, or exiting the program.
+
+Viewing the Seat Map:
+The viewSeatMap method prints the current seat status to the console. "X" indicates a reserved seat, and the seat number signifies an available seat.
+
+Reserving a Seat:
+In the reserveSeat method, users are prompted to input a seat number. The code validates the input and, if the seat is available, marks it as reserved by setting the corresponding array element to 'true'.
+
+Canceling a Reservation:
+Similarly, the cancelReservation method validates user input and, if the seat is reserved, cancels the reservation by setting the corresponding array element to 'false'.

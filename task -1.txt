@@ -1,6 +1,3 @@
-
-
-
 import java.util.Scanner;
 
 public class OnlineReservationSystem {
@@ -85,56 +82,3 @@ public class OnlineReservationSystem {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-I successfully finished Task 1, which involved creating an Online Reservation System in Java using Eclipse IDE. Let me break down the key steps:
-
-Array Initialization:
-The code starts by creating an array named "seats" with boolean values, representing the availability of each seat. 'true' means reserved, and 'false' means available. The array has a length of 10, correlating to the number of seats.
-
-Main Method Logic:
-The main method orchestrates a user-friendly menu using a loop. Users can choose from options like viewing the seat map, reserving a seat, canceling a reservation, or exiting the program.
-
-Viewing the Seat Map:
-The viewSeatMap method prints the current seat status to the console. "X" indicates a reserved seat, and the seat number signifies an available seat.
-
-Reserving a Seat:
-In the reserveSeat method, users are prompted to input a seat number. The code validates the input and, if the seat is available, marks it as reserved by setting the corresponding array element to 'true'.
-
-Canceling a Reservation:
-Similarly, the cancelReservation method validates user input and, if the seat is reserved, cancels the reservation by setting the corresponding array element to 'false'.
